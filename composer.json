@@ -1,0 +1,22 @@
+{
+    "name": "vda/security",
+    "type": "library",
+    "description": "User access control tools",
+    "keywords": ["rbac"],
+    "require": {
+        "php": ">=5.3.23",
+        "vda/datasource": "self.version",
+        "vda/query": "self.version",
+        "vda/util": "self.version"
+    },
+    "autoload": {
+        "psr-0": { "": "" }
+    },
+    "target-dir": "Vda/Security",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-trunk": "1-dev"
+        }
+    }
+}
