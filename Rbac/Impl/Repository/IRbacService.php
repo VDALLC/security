@@ -9,12 +9,6 @@ use Vda\Security\Rbac\Role;
 interface IRbacService extends \Vda\Security\Rbac\IRbacService
 {
     /**
-     * @param $roleId
-     * @return Role
-     */
-    public function loadRole($roleId);
-
-    /**
      * @param RoleFilter $filter
      * @return Role[]
      */
@@ -28,8 +22,6 @@ interface IRbacService extends \Vda\Security\Rbac\IRbacService
     public function saveRole(Role $role);
 
     public function removeRole(Role $role);
-
-    public function loadPermission($permissionId);
 
     /**
      * @param PermissionFilter $filter

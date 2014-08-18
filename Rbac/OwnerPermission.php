@@ -3,8 +3,12 @@ namespace Vda\Security\Rbac;
 
 class OwnerPermission extends Permission
 {
-    public function check(ISubject $subject, IOwned $object)
+    public function check(ISubject $subject, $params)
     {
-        return $subject->getId() == $object->getOwnerId();
+        if ($params['object'] instanceof IOwned) {
+            return $subject->getId() == $params['object']->getOwnerId();
+        } else {
+            return false;
+        }
     }
 }

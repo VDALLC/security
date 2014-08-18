@@ -6,6 +6,11 @@ class Permission
     private $id;
     private $children;
 
+    public function __construct($id = null)
+    {
+        $this->id = $id;
+    }
+
     /**
      * @param mixed $children
      */
