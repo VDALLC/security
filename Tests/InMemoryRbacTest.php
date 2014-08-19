@@ -71,6 +71,21 @@ class InMemoryRbacTestClass extends PHPUnit_Framework_TestCase
         ));
     }
 
+    public function testVisitorCantEdit()
+    {
+        $this->assertFalse($this->rbac->checkPermission(
+            new User(1),
+            $this->rbac->loadPermission('edit'),
+            array('object' => new Post(1))
+        ));
+
+        $this->assertFalse($this->rbac->checkPermission(
+            new User(1),
+            $this->rbac->loadPermission('edit'),
+            array('object' => new Post(2))
+        ));
+    }
+
     public function testMemberCanEditOwnPosts()
     {
         $this->assertTrue($this->rbac->checkPermission(
@@ -82,6 +97,36 @@ class InMemoryRbacTestClass extends PHPUnit_Framework_TestCase
         $this->assertFalse($this->rbac->checkPermission(
             new User(2),
             $this->rbac->loadPermission('edit'),
+            array('object' => new Post(3))
+        ));
+    }
+
+    public function testMemberCanRead()
+    {
+        $this->assertTrue($this->rbac->checkPermission(
+            new User(2),
+            $this->rbac->loadPermission('read'),
+            array('object' => new Post(2))
+        ));
+
+        $this->assertTrue($this->rbac->checkPermission(
+            new User(2),
+            $this->rbac->loadPermission('read'),
+            array('object' => new Post(3))
+        ));
+    }
+
+    public function testModeratorCanRead()
+    {
+        $this->assertTrue($this->rbac->checkPermission(
+            new User(3),
+            $this->rbac->loadPermission('read'),
+            array('object' => new Post(2))
+        ));
+
+        $this->assertTrue($this->rbac->checkPermission(
+            new User(3),
+            $this->rbac->loadPermission('read'),
             array('object' => new Post(3))
         ));
     }
