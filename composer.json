@@ -5,13 +5,13 @@
     "keywords": ["rbac"],
     "require": {
         "php": ">=5.3.23",
-        "vda/datasource": "0.11.*",
-        "vda/query": "0.11.*",
-        "vda/util": "0.11.*"
+        "vda/datasource": "0.11.*|0.12.*",
+        "vda/query": "0.11.*|0.12.*",
+        "vda/util": "0.11.*|0.12.*"
     },
-    "autoload": {
+     "autoload": {
         "psr-0": { "": "" }
-    },
+     },
     "target-dir": "Vda/Security",
     "minimum-stability": "dev",
     "extra": {
