@@ -9,10 +9,9 @@
         "vda/query": "0.11.*|0.12.*",
         "vda/util": "0.11.*|0.12.*"
     },
-     "autoload": {
-        "psr-0": { "": "" }
-     },
-    "target-dir": "Vda/Security",
+    "autoload": {
+        "psr-4": { "Vda\\Security\\": "src/" }
+    },
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
