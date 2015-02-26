@@ -3,19 +3,22 @@
     "type": "library",
     "description": "User access control tools",
     "keywords": ["rbac"],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://composer.vda-team.com/"
+        }
+    ],
     "require": {
         "php": ">=5.3.23",
-        "vda/datasource": "0.11.*|0.12.*",
-        "vda/query": "0.11.*|0.12.*",
-        "vda/util": "0.11.*|0.12.*"
+        "vda/datasource": "0.16.*",
+        "vda/query": "0.13.*",
+        "vda/util": "0.12.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
     },
     "autoload": {
         "psr-4": { "Vda\\Security\\": "src/" }
-    },
-    "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "dev-trunk": "1-dev"
-        }
     }
 }
